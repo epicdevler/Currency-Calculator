@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Currency Converter</string>
+    <string name="app_name">Currency Calculator</string>
+    <string name="fab_menu_description">Navigation Icon</string>
+    <string name="sign_up">Sign up</string>
+    <string name="currency_calculator">Currency\nCalculator</string>
+    <string name="period">.</string>
 </resources>

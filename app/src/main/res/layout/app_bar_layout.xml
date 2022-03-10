@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/menuHandler"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            app:icon="@drawable/ic_cc_menu"
+            app:iconTint="@color/green" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/menuHandler"
+            android:layout_alignEnd="@id/menuHandler"
+            android:layout_alignBottom="@id/menuHandler"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/worksans_medium"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:text="@string/sign_up"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="@color/green" />
+
+    </RelativeLayout>
+
+</com.google.android.material.appbar.AppBarLayout>

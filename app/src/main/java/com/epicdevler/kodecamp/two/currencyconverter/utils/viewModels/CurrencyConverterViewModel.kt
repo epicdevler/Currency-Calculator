@@ -13,7 +13,7 @@ import javax.inject.Named
 @HiltViewModel
 class CurrencyConverterViewModel @Inject constructor(
     @Named("baseURL")
-    val baseURL: String
+    private val baseURL: String
 ) : ViewModel() {
 
     private val _uiState = Channel<String>()

@@ -17,6 +17,7 @@
     <color name="blue">#FF0075ff</color>
     <color name="green">#FF00D998</color>
     <color name="inputBg">#FFFAFAFA</color>
+    <color name="transparent">#00FFFFFF</color>
     <color name="textColor">#FF757575</color>
     <color name="placeholderColor">#FFC8C8C8</color>
 </resources>

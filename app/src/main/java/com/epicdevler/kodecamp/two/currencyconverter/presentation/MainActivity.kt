@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.epicdevler.kodecamp.two.currencyconverter.databinding.ActivityMainBinding
+import com.epicdevler.kodecamp.two.currencyconverter.utils.snackBar.SnackError
 import com.epicdevler.kodecamp.two.currencyconverter.utils.viewModels.CurrencyConverterViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -22,11 +23,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        viewModel.test()
+
         lifecycleScope.launchWhenCreated {
             delay(3000L)
-
+            viewModel.uiState.collect {
+                SnackError(binding.root, it).show()
+            }
         }
-
-
     }
 }
