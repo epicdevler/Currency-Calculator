@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/drawable/ic_cc_menu.xml" value="0.1095" />
+        <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/drawable/selection_background.xml" value="0.1095" />
+        <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/layout-land/main_activity_content.xml" value="0.22708333333333333" />
+        <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/layout-land/main_activity_convert_type_selector.xml" value="0.1" />
         <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/layout/activity_main.xml" value="0.16018518518518518" />
         <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/layout/app_bar_layout.xml" value="0.22" />
+        <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/layout/main_activity_content.xml" value="0.3390625" />
         <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/layout/main_activity_convert_type_selector.xml" value="0.16018518518518518" />
-        <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/layout/main_activity_inputs_layout.xml" value="0.16018518518518518" />
+        <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/layout/main_activity_inputs_layout.xml" value="0.22" />
         <entry key="..\:/src/Learning/Android/Currency_Converter/app/src/main/res/layout/title_text_layout.xml" value="0.22" />
       </map>
     </option>

@@ -8,7 +8,6 @@ import com.epicdevler.kodecamp.two.currencyconverter.databinding.ActivityMainBin
 import com.epicdevler.kodecamp.two.currencyconverter.utils.snackBar.SnackError
 import com.epicdevler.kodecamp.two.currencyconverter.utils.viewModels.CurrencyConverterViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
@@ -23,10 +22,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.test()
+        initUiFun()
 
+        handleViewModelObservers()
+    }
+
+    private fun initUiFun() {
+        binding.mainActivityContent.convert.setOnClickListener {
+            viewModel.test()
+        }
+    }
+
+    private fun handleViewModelObservers() {
         lifecycleScope.launchWhenCreated {
-            delay(3000L)
             viewModel.uiState.collect {
                 SnackError(binding.root, it).show()
             }

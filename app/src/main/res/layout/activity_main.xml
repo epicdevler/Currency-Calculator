@@ -1,72 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.MainActivity">
 
-    <include
-        android:id="@+id/appbarLayout"
-        layout="@layout/app_bar_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/endGuide"
-        app:layout_constraintStart_toStartOf="@id/startGuide"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            android:id="@+id/mainActivityContent"
+            layout="@layout/main_activity_content" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/topAppbarDivider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="130dp" />
-
-    <include
-        android:id="@+id/titleLayout"
-        layout="@layout/title_text_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/endGuide"
-        app:layout_constraintStart_toStartOf="@id/startGuide"
-        app:layout_constraintTop_toTopOf="@id/topAppbarDivider" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/screenTitleDivider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="280dp" />
-
-    <include
-        android:id="@+id/inputLayout"
-        layout="@layout/main_activity_inputs_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/endGuide"
-        app:layout_constraintStart_toStartOf="@id/startGuide"
-        app:layout_constraintTop_toBottomOf="@id/screenTitleDivider" />
-
-    <include
-        android:id="@+id/convertTypeSelectors"
-        layout="@layout/main_activity_convert_type_selector"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/endGuide"
-        app:layout_constraintStart_toStartOf="@id/startGuide"
-        app:layout_constraintTop_toBottomOf="@id/inputLayout" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/startGuide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/endGuide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="20dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

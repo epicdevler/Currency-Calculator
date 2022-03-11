@@ -4,55 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/green"
     android:orientation="vertical"
     tools:showIn="@layout/activity_main">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginBottom="16dp"
         android:layout_height="wrap_content"
         android:background="@color/inputBg">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/currencyAmountInputLayout"
             style="@style/Widget.Material3.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxStrokeWidth="0dp"
-            app:hintEnabled="false"
-            app:boxBackgroundColor="@color/transparent">
+            app:boxStrokeWidthFocused="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/currencyAmountInput"
                 style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:backgroundTint="@color/transparent"
+                android:digits="123456789."
                 android:fontFamily="@font/worksans_bold"
-                android:hint="0" />
+                android:imeOptions="actionGo"
+                android:hint="0"
+                android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/currencyType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/currencyAmountInputLayout"
+            android:layout_alignBottom="@id/currencyAmountInputLayout"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/worksans_bold"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:text="EUR"
+            android:textColor="@color/placeholderColor"
+            app:hintEnabled="false" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@color/inputBg">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Material3.TextInputLayout.FilledBox"
-            android:layout_width="match_parent"
-            app:hintEnabled="false"
-            app:boxStrokeWidth="0dp"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/convertValue"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:fontFamily="@font/worksans_bold"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:text="4.264"
+            android:textColor="@color/textColor"
+            app:hintEnabled="false" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/convertRemainder"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/transparent">
+            android:layout_alignTop="@id/convertValue"
+            android:layout_alignBottom="@id/convertValue"
+            android:layout_toEndOf="@id/convertValue"
+            android:fontFamily="@font/worksans_bold"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="00000"
+            android:textColor="@color/placeholderColor"
+            app:hintEnabled="false" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/worksans_bold"
-                android:hint="0" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/convertType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/convertValue"
+            android:layout_alignBottom="@id/convertValue"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/worksans_bold"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:text="PLN"
+            android:textColor="@color/placeholderColor"
+            app:hintEnabled="false" />
 
     </RelativeLayout>
 
