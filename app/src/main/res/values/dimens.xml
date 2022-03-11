@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="appbar_spacer_dimen">130dp</dimen>
+    <dimen name="input_layout_spacer_dimen">450dp</dimen>
+    <dimen name="converterSelectors_spacer_dimen">530dp</dimen>
+    <dimen name="title_spacer_dimen">280dp</dimen>
+
+    <dimen name="appbar_spacer_dimen_land">100dp</dimen>
+    <dimen name="input_layout_spacer_dimen_land">420dp</dimen>
+    <dimen name="converterSelectors_spacer_dimen_land">500dp</dimen>
+    <dimen name="title_spacer_dimen_land">250dp</dimen>
+</resources>
