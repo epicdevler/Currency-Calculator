@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
             viewModel.test()
         }
 
+        binding.apply {
+
+        }
+
         val currencies = listOf(
             "EUR",
             "PLN",
