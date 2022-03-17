@@ -12,7 +12,7 @@ import com.epicdevler.kodecamp.two.currencyconverter.utils.room_setup.models.Las
 import com.epicdevler.kodecamp.two.currencyconverter.utils.room_setup.models.TestCurrencyRates
 
 @Database(
-    entities = [CurrencyTypesModel::class, ConversionRates::class, TestCurrencyRates::class],
+    entities = [CurrencyTypesModel::class, ConversionRates::class],
     version = 1,
     exportSchema = false
 )

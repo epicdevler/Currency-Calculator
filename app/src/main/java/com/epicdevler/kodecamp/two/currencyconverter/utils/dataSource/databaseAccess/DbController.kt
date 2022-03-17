@@ -15,7 +15,6 @@ import kotlinx.coroutines.withContext
 class DbController(val currencyTypeDao: CurrencyTypeDao) {
 
     suspend fun saveSupportedCurrencyTypes(
-        rates: ArrayList<TestCurrencyRates>? = null,
         codes: JsonArray? = null
     ) {
         withContext(Dispatchers.IO) {
@@ -29,32 +28,23 @@ class DbController(val currencyTypeDao: CurrencyTypeDao) {
                     )
                 }
             }
-            if (rates != null) {
-                for (rate in rates){
-                    currencyTypeDao.saveCurrencyRates(conversionRates = rate)
-                }
-            }
         }
     }
 
     suspend fun checkIfCodesAreAvailable(): Int = currencyTypeDao.doesCurrenciesExists()
-    suspend fun checkIfRatesAreAvailable(base_code: String, currencyTo: String): Int = currencyTypeDao.doesCurrenciesRatesExists(base_code, currencyTo)
-    suspend fun checkIfBaseRatesIsAvailable(base_code: String, target_code: String): Int =
-        currencyTypeDao.doesBaseCurrenciesRateExists(base_code, target_code)
 
 
     fun getAvailableCurrencies(): Flow<List<CurrencyTypesModel>> =
         currencyTypeDao.getCurrencies()
 
-    suspend fun saveCurrentBaseRate(enrichedDataModel: ConversionRates?) {
+    suspend fun saveCurrentBaseRate(conversionRates: ConversionRates?) {
         withContext(Dispatchers.IO) {
-            val rate = ConversionRates()
-            if (enrichedDataModel != null) {
+            if (conversionRates != null) {
                 currencyTypeDao.saveCurrencyRates(
                     conversionRates = ConversionRates(
-                        BASE_CURRENCY = enrichedDataModel.BASE_CURRENCY,
-                        TARGET_CODE = enrichedDataModel.TARGET_CODE,
-                        CONVERSION_RATE = enrichedDataModel.CONVERSION_RATE,
+                        BASE_CURRENCY = conversionRates.BASE_CURRENCY,
+                        TARGET_CODE = conversionRates.TARGET_CODE,
+                        CONVERSION_RATE = conversionRates.CONVERSION_RATE,
                     )
                 )
             }
