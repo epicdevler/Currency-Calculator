@@ -15,7 +15,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/currencyAmountInputLayout"
-            style="@style/Widget.Material3.TextInputLayout.FilledBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxStrokeWidth="0dp"
@@ -27,16 +27,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/transparent"
-                android:digits="123456789."
+                android:digits="1234567890."
                 android:fontFamily="@font/worksans_bold"
                 android:imeOptions="actionGo"
-                android:hint="0"
+                android:text="0"
                 android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/currencyType"
+            android:id="@+id/currencyFrom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/currencyAmountInputLayout"
@@ -64,9 +64,10 @@
             android:fontFamily="@font/worksans_bold"
             android:gravity="center"
             android:paddingStart="16dp"
-            android:text="4.264"
+            android:text="0.00"
             android:textColor="@color/textColor"
-            app:hintEnabled="false" />
+            app:hintEnabled="false"
+            tools:ignore="RtlSymmetry" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/convertRemainder"
@@ -77,13 +78,12 @@
             android:layout_toEndOf="@id/convertValue"
             android:fontFamily="@font/worksans_bold"
             android:gravity="center"
-            android:visibility="gone"
-            android:text="00000"
+            android:text="000"
             android:textColor="@color/placeholderColor"
             app:hintEnabled="false" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/convertType"
+            android:id="@+id/currencyTo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/convertValue"

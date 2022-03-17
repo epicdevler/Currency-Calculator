@@ -4,7 +4,7 @@ plugins {
     id "dagger.hilt.android.plugin"
     id "kotlin-kapt"
 }
-def accessPoint = "3754074db626c8a90fd63545a9d1697b"
+def ACCESS_KEY = "8185a517c11ca18ec72749e2"
 android {
     compileSdk 32
 
@@ -14,13 +14,18 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-        resValue "string", "FIXER_ACCESS_KEY", accessPoint
+        resValue "string", "API_ACCESS_KEY", ACCESS_KEY
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            shrinkResources true
+            minifyEnabled true
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -72,6 +77,12 @@ dependencies {
 //    RETROFIT
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+//    KOTLIN REFLECTION
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.10")
+
+//    LOTTIE FILES
+    implementation "com.airbnb.android:lottie:4.2.2"
 
 }
 

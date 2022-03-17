@@ -5,6 +5,7 @@
     <string name="currency_calculator">Currency\nCalculator</string>
     <string name="period">.</string>
     <string name="convert">Convert</string>
+    <string name="startupSuccessMsg">Finished Loading data</string>
 
     <string-array name="currencyTypes">
         <item>EUR</item>
